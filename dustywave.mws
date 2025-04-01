@@ -1,0 +1,124 @@
+{VERSION 5 0 "IBM INTEL NT" "5.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 
+0 0 1 2 2 2 2 2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart;" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 72 "assume(vgmr,real);assume(vgmi,real);assume(vdmr,real)
+;assume(vdmi,real);" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 80 "assu
+me(rhogmr,real);assume(rhogmi,real);assume(rhodmr,real);assume(rhodmi,
+real);" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "assume(wmr,real);
+assume(wmi,real);" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 90 "assume
+(rhogeq,real);assume(rhodeq,real);assume(Kdrag,real);assume(cs,real);a
+ssume(k,real);" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 80 "assume(vg
+sol,real);assume(vdsol,real);assume(rhogsol,real);assume(rhodsol,real)
+;" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 38 "vgm:=vgmr + I*vgmi:vdm:=vdmr + I*vdmi:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 50 "rhogm:=rhogmr + I*rhogmi:rho
+dm:=rhodmr + I*rhodmi:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "w
+m := wmr + I*wmi:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "vg:=(x,t)->vgm*exp(I*(k*x-wm
+*t)):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "vd:=(x,t)->vdm*exp
+(I*(k*x-wm*t)):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 37 "rhog:=(x
+,t)->rhogm*exp(I*(k*x-wm*t)):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 37 "rhod:=(x,t)->rhodm*exp(I*(k*x-wm*t)):" }{TEXT -1 0 "" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 105 "eqntest1:=unapply(rhogeq*diff(vg(x,t),t) -( -Kdrag*(
+vg(x,t) - vd(x,t)) - cs^2*diff(rhog(x,t),x)  ) ,x,t):" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 153 "eq1r1:=subs(\{wmi=w1i,wmr=w1r,vgmr
+=vg1r,vgmi=vg1i,vdmr=vd1r,vdmi=vd1i,rhogmr=rhog1r,rhogmi=rhog1i,rhodmr
+=rhod1r,rhodmi=rhod1i\},Re(expand(eqntest1(0,0)))):" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 153 "eq1r2:=subs(\{wmi=w2i,wmr=w2r,vgmr=vg2r,
+vgmi=vg2i,vdmr=vd2r,vdmi=vd2i,rhogmr=rhog2r,rhogmi=rhog2i,rhodmr=rhod2
+r,rhodmi=rhod2i\},Re(expand(eqntest1(0,0)))):" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 153 "eq1r3:=subs(\{wmi=w3i,wmr=w3r,vgmr=vg3r,vgmi=vg
+3i,vdmr=vd3r,vdmi=vd3i,rhogmr=rhog3r,rhogmi=rhog3i,rhodmr=rhod3r,rhodm
+i=rhod3i\},Re(expand(eqntest1(0,0)))):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 153 "eq1i1:=subs(\{wmi=w1i,wmr=w1r,vgmr=vg1r,vgmi=vg1i,vd
+mr=vd1r,vdmi=vd1i,rhogmr=rhog1r,rhogmi=rhog1i,rhodmr=rhod1r,rhodmi=rho
+d1i\},Im(expand(eqntest1(0,0)))):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 153 "eq1i2:=subs(\{wmi=w2i,wmr=w2r,vgmr=vg2r,vgmi=vg2i,vd
+mr=vd2r,vdmi=vd2i,rhogmr=rhog2r,rhogmi=rhog2i,rhodmr=rhod2r,rhodmi=rho
+d2i\},Im(expand(eqntest1(0,0)))):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 153 "eq1i3:=subs(\{wmi=w3i,wmr=w3r,vgmr=vg3r,vgmi=vg3i,vd
+mr=vd3r,vdmi=vd3i,rhogmr=rhog3r,rhogmi=rhog3i,rhodmr=rhod3r,rhodmi=rho
+d3i\},Im(expand(eqntest1(0,0)))):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 80 "eqntest
+2:=unapply( rhodeq*diff(vd(x,t),t) - ( Kdrag*(vg(x,t) - vd(x,t)) ) ,x,
+t):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 153 "eq2r1:=subs(\{wmi=w
+1i,wmr=w1r,vgmr=vg1r,vgmi=vg1i,vdmr=vd1r,vdmi=vd1i,rhogmr=rhog1r,rhogm
+i=rhog1i,rhodmr=rhod1r,rhodmi=rhod1i\},Re(expand(eqntest2(0,0)))):" }}
+}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 153 "eq2r2:=subs(\{wmi=w2i,wmr=
+w2r,vgmr=vg2r,vgmi=vg2i,vdmr=vd2r,vdmi=vd2i,rhogmr=rhog2r,rhogmi=rhog2
+i,rhodmr=rhod2r,rhodmi=rhod2i\},Re(expand(eqntest2(0,0)))):" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 153 "eq2r3:=subs(\{wmi=w3i,wmr=w
+3r,vgmr=vg3r,vgmi=vg3i,vdmr=vd3r,vdmi=vd3i,rhogmr=rhog3r,rhogmi=rhog3i
+,rhodmr=rhod3r,rhodmi=rhod3i\},Re(expand(eqntest2(0,0)))):" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 153 "eq2i1:=subs(\{wmi=w1i,wmr=w1r,vgmr
+=vg1r,vgmi=vg1i,vdmr=vd1r,vdmi=vd1i,rhogmr=rhog1r,rhogmi=rhog1i,rhodmr
+=rhod1r,rhodmi=rhod1i\},Im(expand(eqntest2(0,0)))):" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 153 "eq2i2:=subs(\{wmi=w2i,wmr=w2r,vgmr=vg2r,
+vgmi=vg2i,vdmr=vd2r,vdmi=vd2i,rhogmr=rhog2r,rhogmi=rhog2i,rhodmr=rhod2
+r,rhodmi=rhod2i\},Im(expand(eqntest2(0,0)))):" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 153 "eq2i3:=subs(\{wmi=w3i,wmr=w3r,vgmr=vg3r,vgmi=vg
+3i,vdmr=vd3r,vdmi=vd3i,rhogmr=rhog3r,rhogmi=rhog3i,rhodmr=rhod3r,rhodm
+i=rhod3i\},Im(expand(eqntest2(0,0)))):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 67 "eqntest
+3:=unapply(diff(rhog(x,t),t) + rhogeq*diff(vg(x,t),x) ,x,t):" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 153 "eq3r1:=subs(\{wmi=w1i,wmr=w
+1r,vgmr=vg1r,vgmi=vg1i,vdmr=vd1r,vdmi=vd1i,rhogmr=rhog1r,rhogmi=rhog1i
+,rhodmr=rhod1r,rhodmi=rhod1i\},Re(expand(eqntest3(0,0)))):" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 153 "eq3r2:=subs(\{wmi=w2i,wmr=w2r,vgmr
+=vg2r,vgmi=vg2i,vdmr=vd2r,vdmi=vd2i,rhogmr=rhog2r,rhogmi=rhog2i,rhodmr
+=rhod2r,rhodmi=rhod2i\},Re(expand(eqntest3(0,0)))):" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 153 "eq3r3:=subs(\{wmi=w3i,wmr=w3r,vgmr=vg3r,
+vgmi=vg3i,vdmr=vd3r,vdmi=vd3i,rhogmr=rhog3r,rhogmi=rhog3i,rhodmr=rhod3
+r,rhodmi=rhod3i\},Re(expand(eqntest3(0,0)))):" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 153 "eq3i1:=subs(\{wmi=w1i,wmr=w1r,vgmr=vg1r,vgmi=vg
+1i,vdmr=vd1r,vdmi=vd1i,rhogmr=rhog1r,rhogmi=rhog1i,rhodmr=rhod1r,rhodm
+i=rhod1i\},Im(expand(eqntest3(0,0)))):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 153 "eq3i2:=subs(\{wmi=w2i,wmr=w2r,vgmr=vg2r,vgmi=vg2i,vd
+mr=vd2r,vdmi=vd2i,rhogmr=rhog2r,rhogmi=rhog2i,rhodmr=rhod2r,rhodmi=rho
+d2i\},Im(expand(eqntest3(0,0)))):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 153 "eq3i3:=subs(\{wmi=w3i,wmr=w3r,vgmr=vg3r,vgmi=vg3i,vd
+mr=vd3r,vdmi=vd3i,rhogmr=rhog3r,rhogmi=rhog3i,rhodmr=rhod3r,rhodmi=rho
+d3i\},Im(expand(eqntest3(0,0)))):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 67 "eqntest
+4:=unapply(diff(rhod(x,t),t) + rhodeq*diff(vd(x,t),x) ,x,t):" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 153 "eq4r1:=subs(\{wmi=w1i,wmr=w
+1r,vgmr=vg1r,vgmi=vg1i,vdmr=vd1r,vdmi=vd1i,rhogmr=rhog1r,rhogmi=rhog1i
+,rhodmr=rhod1r,rhodmi=rhod1i\},Re(expand(eqntest4(0,0)))):" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 153 "eq4r2:=subs(\{wmi=w2i,wmr=w2r,vgmr
+=vg2r,vgmi=vg2i,vdmr=vd2r,vdmi=vd2i,rhogmr=rhog2r,rhogmi=rhog2i,rhodmr
+=rhod2r,rhodmi=rhod2i\},Re(expand(eqntest4(0,0)))):" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 153 "eq4r3:=subs(\{wmi=w3i,wmr=w3r,vgmr=vg3r,
+vgmi=vg3i,vdmr=vd3r,vdmi=vd3i,rhogmr=rhog3r,rhogmi=rhog3i,rhodmr=rhod3
+r,rhodmi=rhod3i\},Re(expand(eqntest4(0,0)))):" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 153 "eq4i1:=subs(\{wmi=w1i,wmr=w1r,vgmr=vg1r,vgmi=vg
+1i,vdmr=vd1r,vdmi=vd1i,rhogmr=rhog1r,rhogmi=rhog1i,rhodmr=rhod1r,rhodm
+i=rhod1i\},Im(expand(eqntest4(0,0)))):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 153 "eq4i2:=subs(\{wmi=w2i,wmr=w2r,vgmr=vg2r,vgmi=vg2i,vd
+mr=vd2r,vdmi=vd2i,rhogmr=rhog2r,rhogmi=rhog2i,rhodmr=rhod2r,rhodmi=rho
+d2i\},Im(expand(eqntest4(0,0)))):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 153 "eq4i3:=subs(\{wmi=w3i,wmr=w3r,vgmr=vg3r,vgmi=vg3i,vd
+mr=vd3r,vdmi=vd3i,rhogmr=rhog3r,rhogmi=rhog3i,rhodmr=rhod3r,rhodmi=rho
+d3i\},Im(expand(eqntest4(0,0)))):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "eqtvgr:
+=vg1r+vg2r+vg3r:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "eqtvgi:
+=vg1i+vg2i+vg3i - vgsol:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 
+"eqtvdr:=vd1r+vd2r+vd3r :" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "eqtvdi
+:=vd1i+vd2i+vd3i - vdsol:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+32 "eqtrhogr:=rhog1r+rhog2r+rhog3r :" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 41 "eqtrhogi:=rhog1i+rhog2i+rhog3i - rhogsol:" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "eqtrhodr:=rhod1r+rhod2r+rhod3r :" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 41 "eqtrhodi:=rhod1i+rhod2i+rh
+od3i - rhodsol:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 324 "eqsolve:=solve(\{eqtvgr,eqt
+vgi,eqtvdr,eqtvdi,eqtrhogr,eqtrhogi,eqtrhodr,eqtrhodi,eq1r1,eq1r2,eq1r
+3,eq1i1,eq1i2,eq1i3,eq3r1,eq3r2,eq3r3,eq3i1,eq3i2,eq3i3,eq4r2,eq4r3,eq
+4i2,eq4i3\},\{vg1r,vg2r,vg3r,vg1i,vg2i,vg3i,vd1r,vd2r,vd3r,vd1i,vd2i,v
+d3i,rhog1r,rhog2r,rhog3r,rhog1i,rhog2i,rhog3i,rhod1r,rhod2r,rhod3r,rho
+d1i,rhod2i,rhod3i\}):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 46 "for i from 1 to 24 do\ncom
+bine(eqsolve[i]);\nod;" }{TEXT -1 0 "" }}}}{MARK "59 0 0" 46 }
+{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }
