@@ -12,7 +12,7 @@ or
 sudo apt install gfortran
 ```
 
-## How to Run the Code
+## How to run the code
 
 Type `make` to compile the Fortran example code.
 
@@ -62,5 +62,17 @@ You can modify the column indices to plot different quantities:
 - Column 2: dust velocity
 - Column 3: gas density
 - Column 4: dust density
+
+## Making a nice animation
+
+A more advanced plotting script is supplied in `plot_dustywave.py`
+```
+python3 plot_dustywave.py
+```
+which produces the following animation (written to `dustywave.mp4` if you have ffmpeg installed):
+
+
+![dustywave](https://github.com/user-attachments/assets/e778ac77-c95c-4fe5-a7c4-992232a9495a)
+
 
 
