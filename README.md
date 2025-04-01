@@ -1,7 +1,6 @@
-# Dustywave
+# DUSTYWAVE
 
-Example program for computing the DUSTYWAVE exact solution from Laibe & Price (2011) [DUSTYBOX and DUSTYWAVE: two test problems for numerical simulations of two-fluid astrophysical dust-gas mixtures](http://adsabs.harvard.edu/abs/2011MNRAS.418.1491L), MNRAS 418, 1491L
-[arXiv:1106.1736](http://arXiv.org/abs/1106.1736)
+Example program for computing the DUSTYWAVE exact solution from Laibe & Price (2011) "DUSTYBOX and DUSTYWAVE: two test problems for numerical simulations of two-fluid astrophysical dust-gas mixtures", MNRAS 418, 1491L [[link to paper](http://adsabs.harvard.edu/abs/2011MNRAS.418.1491L)]
 
 ## Requirements
 You will need to have gfortran, the Gnu Fortran Compiler, installed:
